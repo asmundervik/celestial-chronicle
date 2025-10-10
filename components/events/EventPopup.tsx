@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReligiousEvent } from '@/types';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useAppStore } from '@/stores/useAppStore';
 import MayanAnimation from './animations/MayanAnimation';
 import AztecAnimation from './animations/AztecAnimation';
 import OlmecAnimation from './animations/OlmecAnimation';
@@ -14,7 +15,19 @@ interface EventPopupProps {
 }
 
 const EventPopup = ({ event, onClose }: EventPopupProps) => {
+  const {
+    activeJourney,
+    currentStepIndex,
+    nextStep,
+    previousStep,
+    endJourney
+  } = useAppStore();
+
   if (!event) return null;
+
+  const isInJourney = activeJourney !== null;
+  const isFirstStep = currentStepIndex === 0;
+  const isLastStep = activeJourney && currentStepIndex === activeJourney.eventIds.length - 1;
 
   const formatYear = (year: number): string => {
     if (year < 0) {
@@ -111,6 +124,75 @@ const EventPopup = ({ event, onClose }: EventPopupProps) => {
             <div className="mt-4 h-48 rounded-lg overflow-hidden">
               {getAnimation()}
             </div>
+
+            {/* Journey Navigation Controls */}
+            {isInJourney && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-4 p-4 bg-gradient-to-r from-purple-900/30 to-amber-900/30 rounded-lg border border-purple-500/30"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{activeJourney.icon}</span>
+                    <div>
+                      <div className="text-xs font-semibold text-purple-300">
+                        {activeJourney.title}
+                      </div>
+                      <div className="text-[10px] text-slate-500">
+                        Step {currentStepIndex + 1} of {activeJourney.eventIds.length}
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      endJourney();
+                      onClose();
+                    }}
+                    className="text-xs text-slate-400 hover:text-amber-400 transition-colors"
+                  >
+                    Exit Journey
+                  </button>
+                </div>
+
+                <div className="flex gap-2">
+                  <button
+                    onClick={previousStep}
+                    disabled={isFirstStep}
+                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                      isFirstStep
+                        ? 'bg-slate-800/50 text-slate-600 cursor-not-allowed'
+                        : 'bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border border-purple-500/50'
+                    }`}
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span className="text-sm">Previous</span>
+                  </button>
+
+                  <button
+                    onClick={isLastStep ? () => { endJourney(); onClose(); } : nextStep}
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium bg-amber-600/30 hover:bg-amber-600/50 text-amber-200 border border-amber-500/50 transition-all"
+                  >
+                    <span className="text-sm">
+                      {isLastStep ? 'Complete Journey' : 'Next'}
+                    </span>
+                    {!isLastStep && <ChevronRight className="w-4 h-4" />}
+                  </button>
+                </div>
+
+                {/* Progress bar */}
+                <div className="mt-3 h-1 bg-slate-800 rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full bg-gradient-to-r from-purple-500 to-amber-500"
+                    initial={{ width: 0 }}
+                    animate={{
+                      width: `${((currentStepIndex + 1) / activeJourney.eventIds.length) * 100}%`
+                    }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>

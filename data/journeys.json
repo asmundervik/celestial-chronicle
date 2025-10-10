@@ -1,0 +1,97 @@
+[
+  {
+    "id": "asian-awakening",
+    "title": "The Asian Awakening",
+    "description": "Follow the spiritual traditions that emerged across Asia, from ancient Vedic hymns to the spread of Buddhism and the wisdom of Taoism and Confucianism.",
+    "icon": "🌏",
+    "color": "#FF6B35",
+    "eventIds": [
+      "vedas-composition",
+      "upanishads",
+      "buddha-enlightenment",
+      "tao-te-ching",
+      "confucianism",
+      "yoga-sutras",
+      "buddhism-spread-china",
+      "zen-buddhism",
+      "tibetan-buddhism"
+    ]
+  },
+  {
+    "id": "indigenous-americas",
+    "title": "Indigenous Americas",
+    "description": "Discover the rich spiritual traditions of the Americas, from ancient Olmec shamanism to the magnificent pyramids of the Maya and Aztec.",
+    "icon": "🌎",
+    "color": "#DAA520",
+    "eventIds": [
+      "olmec-civilization",
+      "mayan-temples",
+      "native-american-mounds",
+      "aztec-tenochtitlan"
+    ]
+  },
+  {
+    "id": "norse-saga",
+    "title": "The Norse Saga",
+    "description": "Journey through the Viking world, from Bronze Age sun worship to the mighty gods of Asgard, the Viking expansion, and the final Christianization of the North.",
+    "icon": "⚔️",
+    "color": "#4169E1",
+    "eventIds": [
+      "norse-mythology-bronze-age",
+      "norse-pantheon",
+      "viking-age",
+      "norse-sagas",
+      "christianization-scandinavia"
+    ]
+  },
+  {
+    "id": "abrahamic-faiths",
+    "title": "The Abrahamic Path",
+    "description": "Trace the interconnected story of Judaism, Christianity, and Islam, from ancient Zoroastrian monotheism to the revelation of the Quran.",
+    "icon": "✡️",
+    "color": "#1E90FF",
+    "eventIds": [
+      "zoroastrianism-founding",
+      "judaism-temple",
+      "christianity-origins",
+      "christianity-spread-europe",
+      "islam-origins",
+      "islam-golden-age",
+      "sufism",
+      "great-schism",
+      "reformation"
+    ]
+  },
+  {
+    "id": "mystical-traditions",
+    "title": "Mystical Pathways",
+    "description": "Explore the inner dimensions of spirituality through meditation, mysticism, and esoteric practices across different traditions.",
+    "icon": "🕉️",
+    "color": "#9370DB",
+    "eventIds": [
+      "upanishads",
+      "buddha-enlightenment",
+      "yoga-sutras",
+      "sufism",
+      "zen-buddhism",
+      "alchemy-taoism",
+      "tibetan-buddhism"
+    ]
+  },
+  {
+    "id": "ancient-origins",
+    "title": "Ancient Origins",
+    "description": "Begin at the dawn of human spirituality, from 50,000-year-old Aboriginal Dreamtime to the foundations of world religions.",
+    "icon": "🌅",
+    "color": "#8B4513",
+    "eventIds": [
+      "dreamtime-traditions",
+      "norse-mythology-bronze-age",
+      "olmec-civilization",
+      "vedas-composition",
+      "zoroastrianism-founding",
+      "upanishads",
+      "mayan-temples"
+    ]
+  }
+]

@@ -8,8 +8,8 @@ export default function Home() {
     <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-50 px-8 py-6">
-        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200">
-          CelestialChronicle
+        <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200">
+          Celestial Chronicle
         </h1>
         <p className="text-sm text-slate-400 mt-1">
           A Journey Through Religious History

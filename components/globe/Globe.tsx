@@ -1,19 +1,101 @@
 'use client';
 
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
+import * as THREE from 'three';
 import Earth from './Earth';
 import EventPopup from '@/components/events/EventPopup';
 import { useAppStore } from '@/stores/useAppStore';
 import { ReligiousEvent } from '@/types';
 import sampleEvents from '@/data/sample-events.json';
 
+// Helper to convert lat/lng to 3D position on sphere
+function latLngToVector3(lat: number, lng: number, radius: number = 1): THREE.Vector3 {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lng + 180) * (Math.PI / 180);
+
+  const x = -(radius * Math.sin(phi) * Math.cos(theta));
+  const z = radius * Math.sin(phi) * Math.sin(theta);
+  const y = radius * Math.cos(phi);
+
+  return new THREE.Vector3(x, y, z);
+}
+
+// Camera controller component that smoothly moves to events
+function CameraController({
+  targetEvent,
+  onInteractionStart
+}: {
+  targetEvent: ReligiousEvent | null;
+  onInteractionStart: () => void;
+}) {
+  const { camera } = useThree();
+  const controlsRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (targetEvent && controlsRef.current) {
+      // Get the position of the event on the globe
+      const eventPosition = latLngToVector3(
+        targetEvent.location.lat,
+        targetEvent.location.lng,
+        1
+      );
+
+      // Calculate camera target position (looking at the event from a distance)
+      const distance = 3; // Distance from globe
+      const cameraPosition = eventPosition.clone().multiplyScalar(distance);
+
+      // Smoothly animate camera to new position
+      const startPosition = camera.position.clone();
+      const startTime = Date.now();
+      const duration = 1500; // 1.5 seconds
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease in-out function
+        const eased = progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
+
+        camera.position.lerpVectors(startPosition, cameraPosition, eased);
+
+        // Update controls target to point at the event
+        if (controlsRef.current) {
+          controlsRef.current.target.lerp(eventPosition, eased);
+          controlsRef.current.update();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    }
+  }, [targetEvent, camera]);
+
+  return (
+    <OrbitControls
+      ref={controlsRef}
+      enableZoom={true}
+      enablePan={false}
+      minDistance={2}
+      maxDistance={8}
+      autoRotate={false}
+      dampingFactor={0.05}
+      enableDamping={true}
+      onStart={onInteractionStart}
+    />
+  );
+}
+
 const Globe = () => {
   const [autoRotate, setAutoRotate] = useState(true);
-  const [selectedEvent, setSelectedEvent] = useState<ReligiousEvent | null>(null);
-  const { setEvents, getFilteredEvents } = useAppStore();
+  const { setEvents, getFilteredEvents, selectedEvent, setSelectedEvent } = useAppStore();
 
   // Load events on mount
   useEffect(() => {
@@ -82,16 +164,10 @@ const Globe = () => {
               onEventClick={handleEventClick}
             />
 
-            {/* Orbit controls for interaction */}
-            <OrbitControls
-              enableZoom={true}
-              enablePan={false}
-              minDistance={2}
-              maxDistance={8}
-              autoRotate={false}
-              dampingFactor={0.05}
-              enableDamping={true}
-              onStart={handleInteractionStart}
+            {/* Camera controller with smooth animation to events */}
+            <CameraController
+              targetEvent={selectedEvent}
+              onInteractionStart={handleInteractionStart}
             />
           </Suspense>
         </Canvas>

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ReligiousEvent, Region, TimelineState, GlobeState } from '@/types';
+import { ReligiousEvent, Region, TimelineState, GlobeState, Journey } from '@/types';
 
 interface AppStore {
   // Timeline state
@@ -16,6 +16,15 @@ interface AppStore {
   selectedEvent: ReligiousEvent | null;
   setSelectedEvent: (event: ReligiousEvent | null) => void;
   setEvents: (events: ReligiousEvent[]) => void;
+
+  // Journey state
+  activeJourney: Journey | null;
+  currentStepIndex: number;
+  startJourney: (journey: Journey) => void;
+  endJourney: () => void;
+  nextStep: () => void;
+  previousStep: () => void;
+  getCurrentJourneyEvent: () => ReligiousEvent | null;
 
   // Filtered events based on timeline and region
   getFilteredEvents: () => ReligiousEvent[];
@@ -55,6 +64,67 @@ export const useAppStore = create<AppStore>((set, get) => ({
   selectedEvent: null,
   setSelectedEvent: (event) => set({ selectedEvent: event }),
   setEvents: (events) => set({ events }),
+
+  // Journey state
+  activeJourney: null,
+  currentStepIndex: 0,
+
+  startJourney: (journey) => {
+    set({
+      activeJourney: journey,
+      currentStepIndex: 0
+    });
+    // Auto-select the first event in the journey
+    const { events } = get();
+    const firstEvent = events.find(e => e.id === journey.eventIds[0]);
+    if (firstEvent) {
+      set({ selectedEvent: firstEvent });
+    }
+  },
+
+  endJourney: () => {
+    set({
+      activeJourney: null,
+      currentStepIndex: 0,
+      selectedEvent: null
+    });
+  },
+
+  nextStep: () => {
+    const { activeJourney, currentStepIndex, events } = get();
+    if (!activeJourney) return;
+
+    const nextIndex = currentStepIndex + 1;
+    if (nextIndex < activeJourney.eventIds.length) {
+      set({ currentStepIndex: nextIndex });
+      const nextEvent = events.find(e => e.id === activeJourney.eventIds[nextIndex]);
+      if (nextEvent) {
+        set({ selectedEvent: nextEvent });
+      }
+    }
+  },
+
+  previousStep: () => {
+    const { activeJourney, currentStepIndex, events } = get();
+    if (!activeJourney) return;
+
+    const prevIndex = currentStepIndex - 1;
+    if (prevIndex >= 0) {
+      set({ currentStepIndex: prevIndex });
+      const prevEvent = events.find(e => e.id === activeJourney.eventIds[prevIndex]);
+      if (prevEvent) {
+        set({ selectedEvent: prevEvent });
+      }
+    }
+  },
+
+  getCurrentJourneyEvent: () => {
+    const { activeJourney, currentStepIndex, events } = get();
+    if (!activeJourney) return null;
+
+    const eventId = activeJourney.eventIds[currentStepIndex];
+    return events.find(e => e.id === eventId) || null;
+  },
 
   // Filter events based on current timeline and region
   getFilteredEvents: () => {

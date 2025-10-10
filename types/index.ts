@@ -65,9 +65,24 @@ export interface GlobeState {
   rotation: { x: number; y: number };
 }
 
+export interface Journey {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+  eventIds: string[];
+}
+
+export interface JourneyState {
+  activeJourney: Journey | null;
+  currentStepIndex: number;
+}
+
 export interface AppState {
   timeline: TimelineState;
   globe: GlobeState;
   selectedEvent: ReligiousEvent | null;
   filteredEvents: ReligiousEvent[];
+  journey: JourneyState;
 }

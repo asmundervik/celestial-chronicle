@@ -6,7 +6,9 @@
       "Bash(rm:*)",
       "Bash(npm install:*)",
       "Bash(npx shadcn@latest init:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
