@@ -124,18 +124,16 @@ const ConnectionLines = ({ events, selectedEvent }: ConnectionLinesProps) => {
       {connectionLines.map((lineData, index) => {
         const points = lineData.curve.getPoints(50);
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({
+          color: lineData.color,
+          transparent: true,
+          opacity: lineData.isHighlighted ? 0.7 : 0.2,
+          linewidth: 2,
+          blending: THREE.AdditiveBlending,
+        });
+        const line = new THREE.Line(geometry, material);
 
-        return (
-          <line key={index} geometry={geometry}>
-            <lineBasicMaterial
-              color={lineData.color}
-              transparent
-              opacity={lineData.isHighlighted ? 0.7 : 0.2}
-              linewidth={2}
-              blending={THREE.AdditiveBlending}
-            />
-          </line>
-        );
+        return <primitive key={index} object={line} />;
       })}
     </group>
   );
