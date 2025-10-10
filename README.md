@@ -1,11 +1,77 @@
-# celestial-chronicle
+# CelestialChronicle
 
-I want to scaffold an idea I have, which is as follows:
- - A web app (running client side) with beatiful visuals, latest animation technologies, works well on both phone and tablets and desktops
- - The app's main mission is to be an interactive way of digesting the evolution of religion through time and space
+An immersive, visually stunning web application that takes users on an interactive journey through religious history across time and space.
 
-From the earliest evidence of religions practises, old gods, the west the east, how religion travelled, animated on cool large scaled maps, and on a globe the user can spin
- - Also tied in must be a time axis / dimension that the user can easily adjust
- - Some kind of an overlay with text and animation when user wants to dive deeper into a region and religion given a time period
- - Somehow I need to be able to present the user a red thread through time and space using visually stunning techniques
- - The app is intended for the curious but also has potential in an education context
+## Overview
+
+CelestialChronicle explores the magnificent aspects of religious history from the earliest times to today, focusing on:
+
+- **Eastern religions** (Hinduism, Buddhism, Taoism, etc.)
+- **Native American spiritual traditions**
+- **Aboriginal Australian traditions**
+- And more to come...
+
+## Features
+
+- **Interactive 3D Globe** - Rotate and explore religious events by geographic region
+- **Timeline Navigation** - Traverse thousands of years of religious history
+- **Rich Animations** - Beautiful transitions and visual storytelling
+- **Red Threads** - Discover connections between religions across time and space
+- **Detailed Event Views** - Immersive content with texts and animations
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn/ui
+- **3D Graphics**: React Three Fiber + Three.js
+- **Animations**: Framer Motion + GSAP
+- **State Management**: Zustand
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+## Project Structure
+
+```
+celestial-chronicle/
+├── app/              # Next.js app directory
+├── components/       # React components
+│   ├── globe/       # 3D globe components
+│   ├── timeline/    # Timeline components
+│   ├── events/      # Event detail components
+│   └── ui/          # Shadcn UI components
+├── stores/          # Zustand state management
+├── data/            # Religious events data (JSON)
+├── types/           # TypeScript type definitions
+├── hooks/           # Custom React hooks
+└── lib/             # Utility functions
+```
+
+## Development
+
+The app is designed to be:
+- Logically simple
+- Visually stunning
+- Highly interactive
+- Educational yet inspirational
+
+Focus on creating beautiful, smooth animations and an immersive user experience.
+
+## License
+
+MIT

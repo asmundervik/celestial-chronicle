@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd celestial-chronicle && npm run build",
+  "devCommand": "cd celestial-chronicle && npm run dev",
+  "installCommand": "cd celestial-chronicle && npm install",
+  "framework": "nextjs",
+  "outputDirectory": "celestial-chronicle/.next"
+}

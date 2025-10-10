@@ -1,0 +1,800 @@
+[
+  {
+    "id": "dreamtime-traditions",
+    "title": "Aboriginal Dreamtime Traditions",
+    "description": "Ancient Aboriginal spiritual beliefs and stories explaining creation, land, and the connection between all living things. These oral traditions date back tens of thousands of years.",
+    "startYear": -50000,
+    "region": {
+      "id": "oceania",
+      "name": "Australia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -25.2744,
+      "lng": 133.7751,
+      "name": "Central Australia"
+    },
+    "religion": {
+      "id": "aboriginal-spirituality",
+      "name": "Aboriginal Spirituality",
+      "tradition": "Indigenous",
+      "color": "#8B4513"
+    },
+    "category": "origin",
+    "significance": "One of the world's oldest continuous spiritual traditions",
+    "keywords": ["oral tradition", "creation stories", "sacred land", "ancestor spirits", "nature worship"],
+    "connections": []
+  },
+  {
+    "id": "olmec-civilization",
+    "title": "Olmec Spiritual Practices",
+    "description": "The Olmec, one of Mesoamerica's earliest civilizations, developed complex religious practices including shamanism, ritual ball games, and the worship of jaguar deities. Their spiritual traditions influenced later Mayan and Aztec religions.",
+    "startYear": -1500,
+    "endYear": -400,
+    "region": {
+      "id": "central-america",
+      "name": "Central America",
+      "continent": "North America"
+    },
+    "location": {
+      "lat": 18.1096,
+      "lng": -94.4233,
+      "name": "Gulf Coast, Mexico"
+    },
+    "religion": {
+      "id": "olmec-religion",
+      "name": "Olmec Religion",
+      "tradition": "Indigenous",
+      "color": "#D2691E"
+    },
+    "category": "origin",
+    "significance": "Foundation of Mesoamerican religious traditions",
+    "keywords": ["shamanism", "jaguar deity", "ball game ritual", "jade offerings", "sacred mountains"],
+    "connections": ["mayan-temples", "aztec-tenochtitlan"]
+  },
+  {
+    "id": "vedas-composition",
+    "title": "Composition of the Vedas",
+    "description": "The earliest Hindu scriptures, the Rigveda and other Vedic texts, were composed in Sanskrit. These foundational texts contain hymns, philosophy, and guidance for rituals.",
+    "startYear": -1500,
+    "endYear": -500,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 28.7041,
+      "lng": 77.1025,
+      "name": "Northern India"
+    },
+    "religion": {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "tradition": "Eastern",
+      "color": "#FF6B35"
+    },
+    "category": "text",
+    "significance": "Foundation of Hindu philosophy and ritual practice",
+    "keywords": ["sacred texts", "sanskrit", "hymns", "sacrifice rituals", "brahman"],
+    "connections": ["upanishads", "buddha-enlightenment"]
+  },
+  {
+    "id": "zoroastrianism-founding",
+    "title": "Zoroaster's Revelation",
+    "description": "The prophet Zoroaster (Zarathustra) received divine visions from Ahura Mazda, establishing one of the world's first monotheistic religions. Zoroastrianism profoundly influenced later Abrahamic faiths.",
+    "startYear": -1000,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 36.2974,
+      "lng": 59.6062,
+      "name": "Ancient Persia (Iran)"
+    },
+    "religion": {
+      "id": "zoroastrianism",
+      "name": "Zoroastrianism",
+      "tradition": "Ancient",
+      "color": "#FFD700"
+    },
+    "category": "origin",
+    "significance": "First major monotheistic religion, influenced Judaism, Christianity, and Islam",
+    "keywords": ["monotheism", "dualism", "fire temples", "good vs evil", "prophecy"],
+    "connections": ["judaism-temple", "christianity-origins"]
+  },
+  {
+    "id": "upanishads",
+    "title": "The Upanishads",
+    "description": "Philosophical texts exploring the nature of reality, consciousness, and the relationship between Atman (self) and Brahman (ultimate reality). These teachings form the basis of Vedanta philosophy.",
+    "startYear": -800,
+    "endYear": -200,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 25.3176,
+      "lng": 82.9739,
+      "name": "Varanasi, India"
+    },
+    "religion": {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "tradition": "Eastern",
+      "color": "#FF6B35"
+    },
+    "category": "text",
+    "significance": "Core of Hindu philosophical thought and meditation practices",
+    "keywords": ["meditation", "self-realization", "consciousness", "moksha", "philosophy"],
+    "connections": ["vedas-composition", "buddha-enlightenment", "yoga-sutras"]
+  },
+  {
+    "id": "mayan-temples",
+    "title": "Mayan Temple Construction",
+    "description": "The Maya built massive pyramid temples as sacred spaces for rituals, astronomy, and communion with the gods. These structures, like Tikal and Chichen Itza, were centers of spiritual and political power.",
+    "startYear": -600,
+    "endYear": 900,
+    "region": {
+      "id": "central-america",
+      "name": "Central America",
+      "continent": "North America"
+    },
+    "location": {
+      "lat": 17.2500,
+      "lng": -89.6167,
+      "name": "Yucatan Peninsula, Mexico"
+    },
+    "religion": {
+      "id": "mayan-religion",
+      "name": "Mayan Religion",
+      "tradition": "Indigenous",
+      "color": "#DAA520"
+    },
+    "category": "architecture",
+    "significance": "Centers of astronomical observation and religious ceremony",
+    "keywords": ["pyramids", "astronomy", "calendar", "bloodletting rituals", "cosmic cycles"],
+    "connections": ["olmec-civilization", "aztec-tenochtitlan"]
+  },
+  {
+    "id": "buddha-enlightenment",
+    "title": "Buddha's Enlightenment",
+    "description": "Siddhartha Gautama achieves enlightenment under the Bodhi tree in Bodh Gaya, becoming the Buddha and founding Buddhism.",
+    "startYear": -528,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 24.6959,
+      "lng": 84.9911,
+      "name": "Bodh Gaya, India"
+    },
+    "religion": {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "tradition": "Eastern",
+      "color": "#FFD700"
+    },
+    "category": "origin",
+    "significance": "Birth of Buddhism and the Four Noble Truths",
+    "keywords": ["meditation", "enlightenment", "middle way", "suffering", "mindfulness"],
+    "connections": ["upanishads", "buddhism-spread-china", "zen-buddhism", "tibetan-buddhism"]
+  },
+  {
+    "id": "tao-te-ching",
+    "title": "Tao Te Ching",
+    "description": "Laozi composes the foundational text of Taoism, exploring the nature of the Tao and principles of living in harmony with it.",
+    "startYear": -400,
+    "region": {
+      "id": "east-asia",
+      "name": "East Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 34.3416,
+      "lng": 108.9398,
+      "name": "Ancient China"
+    },
+    "religion": {
+      "id": "taoism",
+      "name": "Taoism",
+      "tradition": "Eastern",
+      "color": "#4ECDC4"
+    },
+    "category": "text",
+    "significance": "Central text of Taoism, influencing Chinese philosophy and spirituality",
+    "keywords": ["wu wei", "balance", "nature harmony", "simplicity", "meditation"],
+    "connections": ["confucianism", "zen-buddhism", "alchemy-taoism"]
+  },
+  {
+    "id": "judaism-temple",
+    "title": "Second Temple Judaism",
+    "description": "After return from Babylonian exile, the Second Temple becomes the center of Jewish worship and the development of rabbinic tradition.",
+    "startYear": -516,
+    "endYear": 70,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "name": "Jerusalem"
+    },
+    "religion": {
+      "id": "judaism",
+      "name": "Judaism",
+      "tradition": "Abrahamic",
+      "color": "#1E90FF"
+    },
+    "category": "architecture",
+    "significance": "Center of Jewish religious life and development of Torah study",
+    "keywords": ["temple worship", "torah", "covenant", "priesthood", "pilgrimage"],
+    "connections": ["zoroastrianism-founding", "christianity-origins", "islam-origins"]
+  },
+  {
+    "id": "confucianism",
+    "title": "Confucius and the Analects",
+    "description": "Confucius develops ethical teachings emphasizing social harmony, filial piety, and moral cultivation. His teachings shape East Asian culture for millennia.",
+    "startYear": -479,
+    "region": {
+      "id": "east-asia",
+      "name": "East Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 35.5950,
+      "lng": 116.9844,
+      "name": "Qufu, China"
+    },
+    "religion": {
+      "id": "confucianism",
+      "name": "Confucianism",
+      "tradition": "Eastern",
+      "color": "#CD5C5C"
+    },
+    "category": "text",
+    "significance": "Foundation of East Asian social ethics and governance",
+    "keywords": ["ethics", "social harmony", "filial piety", "ritual propriety", "education"],
+    "connections": ["tao-te-ching", "buddhism-spread-china"]
+  },
+  {
+    "id": "christianity-origins",
+    "title": "Birth of Christianity",
+    "description": "Jesus of Nazareth's teachings and resurrection give birth to Christianity, initially as a Jewish sect that grows into a major world religion.",
+    "startYear": 30,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "name": "Jerusalem"
+    },
+    "religion": {
+      "id": "christianity",
+      "name": "Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B0000"
+    },
+    "category": "origin",
+    "significance": "Foundation of Christian faith and transformation of Western civilization",
+    "keywords": ["gospel", "resurrection", "love", "salvation", "trinity"],
+    "connections": ["judaism-temple", "christianity-spread-europe", "great-schism", "reformation"]
+  },
+  {
+    "id": "yoga-sutras",
+    "title": "Patanjali's Yoga Sutras",
+    "description": "Patanjali codifies the philosophy and practice of yoga, establishing the eight-limbed path to spiritual liberation through meditation and ethical living.",
+    "startYear": 200,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 28.7041,
+      "lng": 77.1025,
+      "name": "Northern India"
+    },
+    "religion": {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "tradition": "Eastern",
+      "color": "#FF6B35"
+    },
+    "category": "text",
+    "significance": "Systematic codification of yoga philosophy and meditation techniques",
+    "keywords": ["meditation", "yoga", "consciousness", "discipline", "enlightenment"],
+    "connections": ["upanishads", "buddha-enlightenment", "modern-yoga"]
+  },
+  {
+    "id": "buddhism-spread-china",
+    "title": "Buddhism Spreads to China",
+    "description": "Buddhism travels along the Silk Road to China, where it syncretizes with Taoist and Confucian thought, creating unique Chinese Buddhist traditions.",
+    "startYear": 100,
+    "endYear": 500,
+    "region": {
+      "id": "east-asia",
+      "name": "East Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 34.3416,
+      "lng": 108.9398,
+      "name": "Chang'an (Xi'an), China"
+    },
+    "religion": {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "tradition": "Eastern",
+      "color": "#FFD700"
+    },
+    "category": "movement",
+    "significance": "Major cultural and religious exchange along Silk Road",
+    "keywords": ["silk road", "cultural exchange", "syncretism", "monasticism", "translation"],
+    "connections": ["buddha-enlightenment", "tao-te-ching", "zen-buddhism"]
+  },
+  {
+    "id": "christianity-spread-europe",
+    "title": "Christianization of Europe",
+    "description": "Christianity spreads throughout the Roman Empire and beyond, transforming European culture through monasticism, cathedral building, and theological development.",
+    "startYear": 300,
+    "endYear": 800,
+    "region": {
+      "id": "europe",
+      "name": "Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "name": "Rome, Italy"
+    },
+    "religion": {
+      "id": "christianity",
+      "name": "Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B0000"
+    },
+    "category": "movement",
+    "significance": "Transformation of European civilization and culture",
+    "keywords": ["monasticism", "cathedrals", "missionaries", "theology", "saints"],
+    "connections": ["christianity-origins", "great-schism", "reformation"]
+  },
+  {
+    "id": "islam-origins",
+    "title": "Revelation of the Quran",
+    "description": "Prophet Muhammad receives divine revelations from Allah through the angel Gabriel, founding Islam and uniting the Arabian Peninsula under monotheistic faith.",
+    "startYear": 610,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 21.4225,
+      "lng": 39.8262,
+      "name": "Mecca, Saudi Arabia"
+    },
+    "religion": {
+      "id": "islam",
+      "name": "Islam",
+      "tradition": "Abrahamic",
+      "color": "#228B22"
+    },
+    "category": "origin",
+    "significance": "Birth of Islam and the final Abrahamic revelation",
+    "keywords": ["quran", "prophecy", "submission", "five pillars", "monotheism"],
+    "connections": ["judaism-temple", "christianity-origins", "islam-golden-age", "sufism"]
+  },
+  {
+    "id": "native-american-mounds",
+    "title": "Cahokia Mounds Construction",
+    "description": "Construction of massive earthen mounds by Native American civilizations for ceremonial and religious purposes, representing sophisticated spiritual and social organization.",
+    "startYear": 600,
+    "endYear": 1400,
+    "region": {
+      "id": "north-america",
+      "name": "North America",
+      "continent": "North America"
+    },
+    "location": {
+      "lat": 38.6551,
+      "lng": -90.0628,
+      "name": "Cahokia, Illinois"
+    },
+    "religion": {
+      "id": "native-american-spirituality",
+      "name": "Native American Spirituality",
+      "tradition": "Indigenous",
+      "color": "#CD853F"
+    },
+    "category": "architecture",
+    "significance": "Evidence of complex Native American religious and social structures",
+    "keywords": ["earth mounds", "ceremonial centers", "cosmic alignment", "ancestor worship", "nature spirits"],
+    "connections": ["olmec-civilization", "mayan-temples"]
+  },
+  {
+    "id": "islam-golden-age",
+    "title": "Islamic Golden Age",
+    "description": "Islamic civilization flourishes with advancements in science, mathematics, medicine, and philosophy while preserving and translating ancient Greek texts.",
+    "startYear": 750,
+    "endYear": 1258,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 33.3152,
+      "lng": 44.3661,
+      "name": "Baghdad, Iraq"
+    },
+    "religion": {
+      "id": "islam",
+      "name": "Islam",
+      "tradition": "Abrahamic",
+      "color": "#228B22"
+    },
+    "category": "text",
+    "significance": "Preservation and advancement of human knowledge",
+    "keywords": ["scholarship", "translation", "philosophy", "science", "libraries"],
+    "connections": ["islam-origins", "sufism"]
+  },
+  {
+    "id": "zen-buddhism",
+    "title": "Zen Buddhism in Japan",
+    "description": "Chan Buddhism from China develops into Zen in Japan, emphasizing meditation, simplicity, and direct insight into Buddha-nature.",
+    "startYear": 1191,
+    "region": {
+      "id": "east-asia",
+      "name": "East Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "name": "Kyoto, Japan"
+    },
+    "religion": {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "tradition": "Eastern",
+      "color": "#FFD700"
+    },
+    "category": "movement",
+    "significance": "Unique Japanese interpretation of Buddhist meditation and aesthetics",
+    "keywords": ["meditation", "mindfulness", "simplicity", "tea ceremony", "zen gardens"],
+    "connections": ["buddha-enlightenment", "buddhism-spread-china", "tao-te-ching"]
+  },
+  {
+    "id": "sufism",
+    "title": "Sufi Mysticism",
+    "description": "Islamic mystical tradition emphasizing direct personal experience of the Divine through meditation, poetry, music, and ecstatic practices.",
+    "startYear": 800,
+    "endYear": 1500,
+    "region": {
+      "id": "middle-east",
+      "name": "Middle East",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 36.7023,
+      "lng": 67.1099,
+      "name": "Balkh, Afghanistan"
+    },
+    "religion": {
+      "id": "islam",
+      "name": "Islam",
+      "tradition": "Abrahamic",
+      "color": "#228B22"
+    },
+    "category": "text",
+    "significance": "Mystical heart of Islamic spirituality",
+    "keywords": ["mysticism", "divine love", "poetry", "whirling", "meditation"],
+    "connections": ["islam-origins", "islam-golden-age"]
+  },
+  {
+    "id": "great-schism",
+    "title": "Great Schism",
+    "description": "Christianity splits into Eastern Orthodox and Roman Catholic churches over theological, political, and cultural differences.",
+    "startYear": 1054,
+    "region": {
+      "id": "europe",
+      "name": "Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "name": "Constantinople (Istanbul)"
+    },
+    "religion": {
+      "id": "christianity",
+      "name": "Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B0000"
+    },
+    "category": "reform",
+    "significance": "Permanent division of Christian church into East and West",
+    "keywords": ["schism", "orthodox", "catholic", "theology", "authority"],
+    "connections": ["christianity-spread-europe", "reformation"]
+  },
+  {
+    "id": "aztec-tenochtitlan",
+    "title": "Templo Mayor of Tenochtitlan",
+    "description": "The Great Temple of the Aztec capital, dedicated to Huitzilopochtli (god of war) and Tlaloc (god of rain). This massive pyramid was the center of Aztec religious life and human sacrifice rituals.",
+    "startYear": 1325,
+    "endYear": 1521,
+    "region": {
+      "id": "central-america",
+      "name": "Central America",
+      "continent": "North America"
+    },
+    "location": {
+      "lat": 19.4326,
+      "lng": -99.1332,
+      "name": "Mexico City, Mexico"
+    },
+    "religion": {
+      "id": "aztec-religion",
+      "name": "Aztec Religion",
+      "tradition": "Indigenous",
+      "color": "#B8860B"
+    },
+    "category": "architecture",
+    "significance": "Heart of Aztec spiritual and political power",
+    "keywords": ["pyramids", "sacrifice", "dual temples", "cosmic balance", "warfare deity"],
+    "connections": ["olmec-civilization", "mayan-temples"]
+  },
+  {
+    "id": "reformation",
+    "title": "Protestant Reformation",
+    "description": "Martin Luther's 95 Theses spark the Protestant Reformation, challenging Catholic Church authority and transforming European Christianity.",
+    "startYear": 1517,
+    "region": {
+      "id": "europe",
+      "name": "Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 51.8661,
+      "lng": 12.6428,
+      "name": "Wittenberg, Germany"
+    },
+    "religion": {
+      "id": "christianity",
+      "name": "Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B0000"
+    },
+    "category": "reform",
+    "significance": "Transformation of Western Christianity and rise of Protestantism",
+    "keywords": ["reform", "scripture", "faith alone", "protest", "translation"],
+    "connections": ["christianity-spread-europe", "great-schism"]
+  },
+  {
+    "id": "sikhism-founding",
+    "title": "Founding of Sikhism",
+    "description": "Guru Nanak establishes Sikhism, teaching devotion to one God, equality of all people, and service to humanity.",
+    "startYear": 1469,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 31.6340,
+      "lng": 74.8723,
+      "name": "Punjab, India"
+    },
+    "religion": {
+      "id": "sikhism",
+      "name": "Sikhism",
+      "tradition": "Indian",
+      "color": "#FF8C00"
+    },
+    "category": "origin",
+    "significance": "Synthesis of Hindu and Islamic elements into unique monotheistic faith",
+    "keywords": ["equality", "service", "meditation", "one god", "guru"],
+    "connections": ["upanishads", "islam-origins", "sufism"]
+  },
+  {
+    "id": "tibetan-buddhism",
+    "title": "Tibetan Buddhism Flourishes",
+    "description": "Unique form of Buddhism develops in Tibet, incorporating tantric practices, monastic scholarship, and the Dalai Lama institution.",
+    "startYear": 600,
+    "endYear": 1959,
+    "region": {
+      "id": "south-asia",
+      "name": "South Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 29.6500,
+      "lng": 91.1000,
+      "name": "Lhasa, Tibet"
+    },
+    "religion": {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "tradition": "Eastern",
+      "color": "#FFD700"
+    },
+    "category": "movement",
+    "significance": "Preservation of Buddhist tantric traditions and philosophy",
+    "keywords": ["tantra", "reincarnation", "monasticism", "mantra", "compassion"],
+    "connections": ["buddha-enlightenment", "buddhism-spread-china"]
+  },
+  {
+    "id": "alchemy-taoism",
+    "title": "Taoist Alchemy Traditions",
+    "description": "Development of internal and external alchemy practices in Taoism, seeking immortality and spiritual transformation through meditation and qi cultivation.",
+    "startYear": 200,
+    "endYear": 1400,
+    "region": {
+      "id": "east-asia",
+      "name": "East Asia",
+      "continent": "Asia"
+    },
+    "location": {
+      "lat": 32.6603,
+      "lng": 103.7317,
+      "name": "Qingcheng Mountain, China"
+    },
+    "religion": {
+      "id": "taoism",
+      "name": "Taoism",
+      "tradition": "Eastern",
+      "color": "#4ECDC4"
+    },
+    "category": "ritual",
+    "significance": "Integration of meditation, philosophy and longevity practices",
+    "keywords": ["alchemy", "immortality", "meditation", "qi", "transformation"],
+    "connections": ["tao-te-ching", "zen-buddhism"]
+  },
+  {
+    "id": "norse-mythology-bronze-age",
+    "title": "Nordic Bronze Age Religious Practices",
+    "description": "Early Germanic and Norse religious practices emerge, featuring sun worship, bronze ritual objects, and burial mounds. Rock carvings depict ships, wheels, and divine figures that would later evolve into the Norse pantheon.",
+    "startYear": -1700,
+    "endYear": -500,
+    "region": {
+      "id": "northern-europe",
+      "name": "Northern Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 59.3293,
+      "lng": 18.0686,
+      "name": "Scandinavia"
+    },
+    "religion": {
+      "id": "norse-paganism",
+      "name": "Norse Paganism",
+      "tradition": "European Pagan",
+      "color": "#4169E1"
+    },
+    "category": "origin",
+    "significance": "Foundation of Nordic spiritual traditions that evolved into Norse mythology",
+    "keywords": ["sun worship", "bronze age", "burial mounds", "rock carvings", "ancestor veneration"],
+    "connections": ["norse-pantheon", "viking-age"]
+  },
+  {
+    "id": "norse-pantheon",
+    "title": "Norse Pantheon and the Nine Realms",
+    "description": "Development of the Norse cosmology featuring Odin, Thor, Freyja, and other gods of the Aesir and Vanir. The worldview centered on Yggdrasil (the World Tree), the Nine Realms, and concepts of fate, honor, and the afterlife in Valhalla.",
+    "startYear": -500,
+    "endYear": 1100,
+    "region": {
+      "id": "northern-europe",
+      "name": "Northern Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 60.1282,
+      "lng": 18.6435,
+      "name": "Uppsala, Sweden"
+    },
+    "religion": {
+      "id": "norse-paganism",
+      "name": "Norse Paganism",
+      "tradition": "European Pagan",
+      "color": "#4169E1"
+    },
+    "category": "origin",
+    "significance": "Central mythology of Viking culture, influencing Scandinavian identity",
+    "keywords": ["Odin", "Thor", "Valhalla", "Yggdrasil", "runes", "fate", "warrior culture"],
+    "connections": ["norse-mythology-bronze-age", "viking-age", "norse-sagas", "christianization-scandinavia"]
+  },
+  {
+    "id": "viking-age",
+    "title": "Viking Age Expansion",
+    "description": "Norse seafarers, traders, and warriors expand across Europe, bringing their gods and traditions. Ritual practices included blót sacrifices, seidr magic, and worship at sacred groves and temples like the Temple at Uppsala.",
+    "startYear": 793,
+    "endYear": 1066,
+    "region": {
+      "id": "northern-europe",
+      "name": "Northern Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 59.9139,
+      "lng": 10.7522,
+      "name": "Norway"
+    },
+    "religion": {
+      "id": "norse-paganism",
+      "name": "Norse Paganism",
+      "tradition": "European Pagan",
+      "color": "#4169E1"
+    },
+    "category": "movement",
+    "significance": "Spread of Norse culture and religion across Northern Europe and beyond",
+    "keywords": ["Vikings", "longships", "blót sacrifice", "seidr magic", "warrior ethos", "raiding"],
+    "connections": ["norse-pantheon", "norse-sagas", "christianization-scandinavia"]
+  },
+  {
+    "id": "norse-sagas",
+    "title": "Recording of Norse Sagas",
+    "description": "Oral traditions of Norse mythology and history are written down in Iceland, preserving stories of gods, heroes, creation, and Ragnarök. The Poetic Edda and Prose Edda become key sources for understanding Norse religion.",
+    "startYear": 1220,
+    "endYear": 1300,
+    "region": {
+      "id": "northern-europe",
+      "name": "Northern Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 64.1466,
+      "lng": -21.9426,
+      "name": "Iceland"
+    },
+    "religion": {
+      "id": "norse-paganism",
+      "name": "Norse Paganism",
+      "tradition": "European Pagan",
+      "color": "#4169E1"
+    },
+    "category": "text",
+    "significance": "Preservation of Norse mythology for future generations",
+    "keywords": ["Edda", "sagas", "oral tradition", "Ragnarök", "heroes", "mythology"],
+    "connections": ["norse-pantheon", "viking-age", "christianization-scandinavia"]
+  },
+  {
+    "id": "christianization-scandinavia",
+    "title": "Christianization of Scandinavia",
+    "description": "Gradual conversion of Norse peoples to Christianity, often syncretizing Christian and pagan elements. Kings like Olaf Tryggvason and Olaf Haraldsson forcefully promoted Christianity while old traditions persisted in folklore.",
+    "startYear": 950,
+    "endYear": 1200,
+    "region": {
+      "id": "northern-europe",
+      "name": "Northern Europe",
+      "continent": "Europe"
+    },
+    "location": {
+      "lat": 59.9139,
+      "lng": 10.7522,
+      "name": "Norway"
+    },
+    "religion": {
+      "id": "christianity",
+      "name": "Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B0000"
+    },
+    "category": "movement",
+    "significance": "Transformation of Scandinavian religious landscape and end of Viking Age paganism",
+    "keywords": ["conversion", "syncretism", "saints", "stave churches", "cultural transition"],
+    "connections": ["norse-pantheon", "viking-age", "christianity-spread-europe", "norse-sagas"]
+  }
+]
