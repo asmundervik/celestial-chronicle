@@ -32,7 +32,8 @@ function CameraController({
   onInteractionStart: () => void;
 }) {
   const { camera } = useThree();
-  const controlsRef = useRef<THREE.Object3D | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const controlsRef = useRef<any>(null);
 
   useEffect(() => {
     if (targetEvent && controlsRef.current) {
