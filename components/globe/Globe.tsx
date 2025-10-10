@@ -3,7 +3,7 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Suspense, useRef, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import Earth from './Earth';
 import EventPopup from '@/components/events/EventPopup';
 import { useAppStore } from '@/stores/useAppStore';
@@ -13,8 +13,7 @@ import sampleEvents from '@/data/sample-events.json';
 const Globe = () => {
   const [autoRotate, setAutoRotate] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState<ReligiousEvent | null>(null);
-  const controlsRef = useRef<any>(null);
-  const { timeline, setEvents, getFilteredEvents } = useAppStore();
+  const { setEvents, getFilteredEvents } = useAppStore();
 
   // Load events on mount
   useEffect(() => {
@@ -85,7 +84,6 @@ const Globe = () => {
 
             {/* Orbit controls for interaction */}
             <OrbitControls
-              ref={controlsRef}
               enableZoom={true}
               enablePan={false}
               minDistance={2}

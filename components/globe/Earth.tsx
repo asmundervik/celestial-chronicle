@@ -36,7 +36,7 @@ const Earth = ({ isRotating, events, selectedEvent, onEventClick }: EarthProps) 
 
   // Gentle rotation animation - only when isRotating is true
   // Rotate the entire group so markers rotate with the Earth
-  useFrame((state) => {
+  useFrame(() => {
     if (isRotating) {
       if (earthGroupRef.current) {
         earthGroupRef.current.rotation.y += 0.001;
