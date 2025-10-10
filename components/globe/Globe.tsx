@@ -1,6 +1,6 @@
 'use client';
 
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Suspense, useState, useEffect, useRef } from 'react';
@@ -32,7 +32,7 @@ function CameraController({
   onInteractionStart: () => void;
 }) {
   const { camera } = useThree();
-  const controlsRef = useRef<any>(null);
+  const controlsRef = useRef<THREE.Object3D | null>(null);
 
   useEffect(() => {
     if (targetEvent && controlsRef.current) {
