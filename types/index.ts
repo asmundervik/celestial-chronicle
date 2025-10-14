@@ -14,6 +14,7 @@ export interface ReligiousEvent {
   keywords?: string[]; // Thematic keywords for filtering and linking
   connections?: string[]; // IDs of related events (red threads)
   media?: Media[];
+  animationVideo?: string; // Optional path to cinematic video overlay
 }
 
 export interface Location {

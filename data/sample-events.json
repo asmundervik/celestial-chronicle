@@ -23,7 +23,169 @@
     "category": "origin",
     "significance": "One of the world's oldest continuous spiritual traditions",
     "keywords": ["oral tradition", "creation stories", "sacred land", "ancestor spirits", "nature worship"],
-    "connections": []
+    "connections": ["uluru-spiritual-site", "aboriginal-rock-art", "aboriginal-songlines"]
+  },
+  {
+    "id": "aboriginal-rock-art",
+    "title": "Aboriginal Rock Art at Kakadu",
+    "description": "Aboriginal peoples in Kakadu create elaborate rock art galleries depicting Dreamtime stories, creation beings, X-ray art of animals, and spiritual teachings. These paintings, spanning over 20,000 years, serve as sacred visual records of spiritual knowledge and connection to country.",
+    "startYear": -20000,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "Australia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -12.8547,
+      "lng": 132.5531,
+      "name": "Kakadu, Northern Territory"
+    },
+    "religion": {
+      "id": "aboriginal-spirituality",
+      "name": "Aboriginal Spirituality",
+      "tradition": "Indigenous",
+      "color": "#8B4513"
+    },
+    "category": "architecture",
+    "significance": "Ancient continuous artistic tradition recording spiritual and cultural knowledge",
+    "keywords": ["rock art", "X-ray art", "Rainbow Serpent", "creation beings", "sacred sites"],
+    "connections": ["dreamtime-traditions", "aboriginal-songlines"]
+  },
+  {
+    "id": "aboriginal-songlines",
+    "title": "Aboriginal Songlines and Dreaming Tracks",
+    "description": "Complex network of Songlines (Dreaming Tracks) crisscross Australia, encoding spiritual knowledge, navigation, law, and creation stories through song, ceremony, and oral tradition. These paths connect sacred sites and preserve tens of thousands of years of cultural and geographical memory.",
+    "startYear": -40000,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "Australia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -23.6980,
+      "lng": 133.8807,
+      "name": "Throughout Australia"
+    },
+    "religion": {
+      "id": "aboriginal-spirituality",
+      "name": "Aboriginal Spirituality",
+      "tradition": "Indigenous",
+      "color": "#8B4513"
+    },
+    "category": "ritual",
+    "significance": "Sophisticated system of spiritual knowledge, law, and navigation encoded in song",
+    "keywords": ["songlines", "oral tradition", "sacred geography", "law", "ceremony"],
+    "connections": ["dreamtime-traditions", "uluru-spiritual-site"]
+  },
+  {
+    "id": "uluru-spiritual-site",
+    "title": "Uluru as Sacred Spiritual Center",
+    "description": "Uluru (Ayers Rock) serves as a deeply sacred site for the Anangu people and a spiritual center in Aboriginal cosmology. The rock features caves with ancient art, marks of creation beings, and serves as a focal point for ceremonies, Tjukurpa (law/stories), and connection between physical and spiritual realms.",
+    "startYear": -10000,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "Australia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -25.3444,
+      "lng": 131.0369,
+      "name": "Uluru, Northern Territory"
+    },
+    "religion": {
+      "id": "aboriginal-spirituality",
+      "name": "Aboriginal Spirituality",
+      "tradition": "Indigenous",
+      "color": "#8B4513"
+    },
+    "category": "architecture",
+    "significance": "One of Australia's most sacred Aboriginal sites, central to spiritual practice and law",
+    "keywords": ["Uluru", "Tjukurpa", "creation beings", "sacred site", "ceremony"],
+    "connections": ["dreamtime-traditions", "aboriginal-songlines"]
+  },
+  {
+    "id": "torres-strait-islander-spirituality",
+    "title": "Torres Strait Islander Spiritual Traditions",
+    "description": "Torres Strait Islander peoples maintain distinct spiritual traditions from mainland Aboriginal cultures, featuring complex cosmology centered on stars, sea, and ancestral beings. Practices include elaborate mask ceremonies, sacred dances, and connection to the spirit world through ritual and song.",
+    "startYear": -2500,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "Australia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -10.2000,
+      "lng": 142.1333,
+      "name": "Torres Strait Islands"
+    },
+    "religion": {
+      "id": "torres-strait-spirituality",
+      "name": "Torres Strait Spirituality",
+      "tradition": "Indigenous",
+      "color": "#6B8E23"
+    },
+    "category": "origin",
+    "significance": "Unique maritime spiritual tradition distinct from mainland Aboriginal practices",
+    "keywords": ["mask ceremonies", "sea spirits", "star navigation", "ancestral beings", "maritime culture"],
+    "connections": ["dreamtime-traditions", "polynesian-navigation"]
+  },
+  {
+    "id": "polynesian-navigation",
+    "title": "Polynesian Wayfinding and Ocean Spirituality",
+    "description": "Polynesian peoples develop sophisticated navigation systems using stars, waves, birds, and spiritual connection to the ocean. Navigation is deeply intertwined with spiritual beliefs, with navigators as ritual specialists maintaining sacred knowledge of ocean pathways, wind patterns, and celestial guides.",
+    "startYear": -1500,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "Polynesia",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -17.6509,
+      "lng": -149.4260,
+      "name": "Tahiti, French Polynesia"
+    },
+    "religion": {
+      "id": "polynesian-spirituality",
+      "name": "Polynesian Spirituality",
+      "tradition": "Indigenous",
+      "color": "#20B2AA"
+    },
+    "category": "ritual",
+    "significance": "Remarkable synthesis of navigation, astronomy, and spiritual practice",
+    "keywords": ["wayfinding", "star navigation", "ocean spirits", "sacred knowledge", "voyaging"],
+    "connections": ["torres-strait-islander-spirituality", "maori-spirituality"]
+  },
+  {
+    "id": "maori-spirituality",
+    "title": "Māori Spiritual Traditions",
+    "description": "Māori people of New Zealand maintain rich spiritual traditions centered on whakapapa (genealogy), mana (spiritual power), tapu (sacredness), and connection to ancestors and the natural world. Practices include elaborate carving, haka, and ceremonial meeting houses (wharenui) as living spiritual centers.",
+    "startYear": 1250,
+    "endYear": 2025,
+    "region": {
+      "id": "oceania",
+      "name": "New Zealand",
+      "continent": "Oceania"
+    },
+    "location": {
+      "lat": -41.2865,
+      "lng": 174.7762,
+      "name": "Wellington, New Zealand"
+    },
+    "religion": {
+      "id": "maori-spirituality",
+      "name": "Māori Spirituality",
+      "tradition": "Indigenous",
+      "color": "#8B0000"
+    },
+    "category": "origin",
+    "significance": "Living tradition maintaining Polynesian spiritual heritage in Aotearoa",
+    "keywords": ["whakapapa", "mana", "tapu", "ancestors", "wharenui", "haka"],
+    "connections": ["polynesian-navigation"]
   },
   {
     "id": "olmec-civilization",
@@ -183,7 +345,8 @@
     "category": "origin",
     "significance": "Birth of Buddhism and the Four Noble Truths",
     "keywords": ["meditation", "enlightenment", "middle way", "suffering", "mindfulness"],
-    "connections": ["upanishads", "buddhism-spread-china", "zen-buddhism", "tibetan-buddhism"]
+    "connections": ["upanishads", "buddhism-spread-china", "zen-buddhism", "tibetan-buddhism"],
+    "animationVideo": "/videos/animations/buddhist-monk.mp4"
   },
   {
     "id": "tao-te-ching",
@@ -796,5 +959,300 @@
     "significance": "Transformation of Scandinavian religious landscape and end of Viking Age paganism",
     "keywords": ["conversion", "syncretism", "saints", "stave churches", "cultural transition"],
     "connections": ["norse-pantheon", "viking-age", "christianity-spread-europe", "norse-sagas"]
+  },
+  {
+    "id": "ancient-egyptian-religion",
+    "title": "Ancient Egyptian Religious Traditions",
+    "description": "Development of one of history's most enduring religious systems, featuring complex polytheism, elaborate burial practices, powerful priesthoods, and monumental temple architecture. Core beliefs centered on ma'at (cosmic order), the afterlife, and divine kingship.",
+    "startYear": -3100,
+    "endYear": -30,
+    "region": {
+      "id": "north-africa",
+      "name": "North Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 25.7478,
+      "lng": 32.6014,
+      "name": "Thebes (Luxor), Egypt"
+    },
+    "religion": {
+      "id": "ancient-egyptian",
+      "name": "Ancient Egyptian Religion",
+      "tradition": "Ancient",
+      "color": "#FFD700"
+    },
+    "category": "origin",
+    "significance": "One of the longest-lasting religious traditions, profoundly influencing later religions",
+    "keywords": ["polytheism", "afterlife", "pyramids", "pharaohs", "ma'at", "Book of the Dead"],
+    "connections": ["coptic-christianity", "islam-spread-africa"]
+  },
+  {
+    "id": "kingdom-of-kush-religion",
+    "title": "Kingdom of Kush Religious Practices",
+    "description": "The Nubian Kingdom of Kush developed a unique blend of indigenous African and Egyptian religious elements, worshiping gods like Amun and Apedemak (the Kushite lion god). Elaborate pyramid tombs and temples at Meroë demonstrate sophisticated religious architecture.",
+    "startYear": -1070,
+    "endYear": 350,
+    "region": {
+      "id": "east-africa",
+      "name": "East Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 16.9394,
+      "lng": 33.7486,
+      "name": "Meroë, Sudan"
+    },
+    "religion": {
+      "id": "kushite-religion",
+      "name": "Kushite Religion",
+      "tradition": "African",
+      "color": "#CD853F"
+    },
+    "category": "origin",
+    "significance": "Unique synthesis of Egyptian and indigenous African spiritual traditions",
+    "keywords": ["pyramids", "lion deity", "Nubian culture", "syncretism", "royal tombs"],
+    "connections": ["ancient-egyptian-religion", "coptic-christianity"]
+  },
+  {
+    "id": "coptic-christianity",
+    "title": "Coptic Christianity in Egypt",
+    "description": "One of the earliest Christian communities, the Coptic Church traces its origins to St. Mark the Evangelist in Alexandria. Egyptian Christians developed unique theological traditions, monastic practices, and liturgical language, preserving ancient Egyptian cultural elements.",
+    "startYear": 42,
+    "endYear": 2025,
+    "region": {
+      "id": "north-africa",
+      "name": "North Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "name": "Alexandria, Egypt"
+    },
+    "religion": {
+      "id": "coptic-christianity",
+      "name": "Coptic Christianity",
+      "tradition": "Abrahamic",
+      "color": "#8B4513"
+    },
+    "category": "origin",
+    "significance": "One of the oldest Christian traditions, preserving unique theological and cultural heritage",
+    "keywords": ["monasticism", "St. Mark", "Alexandria", "Coptic language", "desert fathers"],
+    "connections": ["christianity-origins", "ancient-egyptian-religion", "islam-spread-africa"]
+  },
+  {
+    "id": "ethiopian-christianity",
+    "title": "Ethiopian Orthodox Christianity",
+    "description": "Christianity arrives in the Kingdom of Aksum, making Ethiopia one of the world's oldest Christian nations. The Ethiopian Orthodox Church developed unique practices including the veneration of the Ark of the Covenant, distinctive architecture in rock-hewn churches, and integration with indigenous traditions.",
+    "startYear": 330,
+    "region": {
+      "id": "east-africa",
+      "name": "East Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 14.1343,
+      "lng": 38.7167,
+      "name": "Axum, Ethiopia"
+    },
+    "religion": {
+      "id": "ethiopian-orthodox",
+      "name": "Ethiopian Orthodox",
+      "tradition": "Abrahamic",
+      "color": "#DC143C"
+    },
+    "category": "origin",
+    "significance": "One of the oldest independent Christian churches with unique African traditions",
+    "keywords": ["Ark of the Covenant", "rock-hewn churches", "Aksumite Kingdom", "Ge'ez", "Queen of Sheba"],
+    "connections": ["christianity-origins", "coptic-christianity", "lalibela-churches"]
+  },
+  {
+    "id": "lalibela-churches",
+    "title": "Rock-Hewn Churches of Lalibela",
+    "description": "King Lalibela commissions the carving of eleven monolithic rock-hewn churches from solid volcanic rock, creating a 'New Jerusalem' in Ethiopia. These architectural marvels remain active pilgrimage sites and demonstrate the deep integration of Christianity with Ethiopian culture.",
+    "startYear": 1200,
+    "endYear": 1250,
+    "region": {
+      "id": "east-africa",
+      "name": "East Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 12.0323,
+      "lng": 39.0400,
+      "name": "Lalibela, Ethiopia"
+    },
+    "religion": {
+      "id": "ethiopian-orthodox",
+      "name": "Ethiopian Orthodox",
+      "tradition": "Abrahamic",
+      "color": "#DC143C"
+    },
+    "category": "architecture",
+    "significance": "Extraordinary feat of religious architecture and pilgrimage destination",
+    "keywords": ["rock-hewn", "pilgrimage", "monolithic churches", "sacred architecture", "King Lalibela"],
+    "connections": ["ethiopian-christianity"]
+  },
+  {
+    "id": "islam-spread-africa",
+    "title": "Islam Spreads Across Africa",
+    "description": "Islamic traders, scholars, and missionaries spread Islam throughout North, West, and East Africa through trade routes, establishing great centers of learning like Timbuktu. African Muslims developed unique expressions of Islamic faith, often syncretizing with indigenous traditions.",
+    "startYear": 639,
+    "endYear": 1500,
+    "region": {
+      "id": "west-africa",
+      "name": "West Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 16.7666,
+      "lng": -3.0026,
+      "name": "Timbuktu, Mali"
+    },
+    "religion": {
+      "id": "islam",
+      "name": "Islam",
+      "tradition": "Abrahamic",
+      "color": "#228B22"
+    },
+    "category": "movement",
+    "significance": "Transformation of African societies and creation of great Islamic learning centers",
+    "keywords": ["trans-Saharan trade", "Timbuktu", "manuscripts", "Sufism", "Mali Empire"],
+    "connections": ["islam-origins", "sufism", "mansa-musa-hajj", "coptic-christianity"]
+  },
+  {
+    "id": "mansa-musa-hajj",
+    "title": "Mansa Musa's Pilgrimage to Mecca",
+    "description": "Mansa Musa, the fabulously wealthy ruler of the Mali Empire, undertakes an extravagant hajj to Mecca with thousands of attendants and tons of gold. His pilgrimage demonstrates African Islamic devotion and wealth, establishing Mali's reputation throughout the Islamic world and Europe.",
+    "startYear": 1324,
+    "region": {
+      "id": "west-africa",
+      "name": "West Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 12.6392,
+      "lng": -8.0029,
+      "name": "Bamako, Mali"
+    },
+    "religion": {
+      "id": "islam",
+      "name": "Islam",
+      "tradition": "Abrahamic",
+      "color": "#228B22"
+    },
+    "category": "figure",
+    "significance": "Legendary hajj that showcased African Islamic civilization and wealth",
+    "keywords": ["hajj", "Mali Empire", "gold", "pilgrimage", "trans-Saharan trade"],
+    "connections": ["islam-spread-africa", "islam-origins"]
+  },
+  {
+    "id": "yoruba-religion",
+    "title": "Yoruba Religious Traditions",
+    "description": "The Yoruba people of West Africa maintain rich spiritual traditions centered on Olodumare (supreme deity) and the Orisha (divine spirits). Complex cosmology, divination systems like Ifá, and elaborate rituals influence diaspora religions like Santería, Candomblé, and Vodou.",
+    "startYear": -500,
+    "endYear": 2025,
+    "region": {
+      "id": "west-africa",
+      "name": "West Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": 7.3775,
+      "lng": 3.9470,
+      "name": "Ile-Ife, Nigeria"
+    },
+    "religion": {
+      "id": "yoruba-religion",
+      "name": "Yoruba Religion",
+      "tradition": "African Traditional",
+      "color": "#9370DB"
+    },
+    "category": "origin",
+    "significance": "Foundational African religious system that survived and adapted throughout the diaspora",
+    "keywords": ["Orisha", "Ifá divination", "Olodumare", "sacred kingship", "oral tradition"],
+    "connections": ["african-diaspora-religions"]
+  },
+  {
+    "id": "great-zimbabwe",
+    "title": "Great Zimbabwe Religious Complex",
+    "description": "Construction of the massive stone city of Great Zimbabwe, featuring religious and royal enclosures. The site demonstrates sophisticated indigenous African civilization with spiritual practices centered on ancestor veneration and connection between the living, dead, and spirit world.",
+    "startYear": 1100,
+    "endYear": 1450,
+    "region": {
+      "id": "southern-africa",
+      "name": "Southern Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": -20.2676,
+      "lng": 30.9336,
+      "name": "Great Zimbabwe, Zimbabwe"
+    },
+    "religion": {
+      "id": "shona-religion",
+      "name": "Shona Traditional Religion",
+      "tradition": "African Traditional",
+      "color": "#8B7355"
+    },
+    "category": "architecture",
+    "significance": "Monument to indigenous African civilization and spiritual sophistication",
+    "keywords": ["ancestor veneration", "stone architecture", "sacred kingship", "spirit mediums", "Mwari"],
+    "connections": []
+  },
+  {
+    "id": "zulu-spirituality",
+    "title": "Zulu Spiritual Traditions",
+    "description": "The Zulu people maintain complex spiritual beliefs centered on uMvelinqangi (the supreme being), amadlozi (ancestors), and connection to the natural world. Sangomas (traditional healers) and ritual practices maintain harmony between physical and spiritual realms.",
+    "startYear": 1600,
+    "endYear": 2025,
+    "region": {
+      "id": "southern-africa",
+      "name": "Southern Africa",
+      "continent": "Africa"
+    },
+    "location": {
+      "lat": -28.4793,
+      "lng": 30.8715,
+      "name": "KwaZulu-Natal, South Africa"
+    },
+    "religion": {
+      "id": "zulu-spirituality",
+      "name": "Zulu Spirituality",
+      "tradition": "African Traditional",
+      "color": "#A0522D"
+    },
+    "category": "ritual",
+    "significance": "Living tradition maintaining connection between ancestors and community",
+    "keywords": ["ancestor veneration", "sangoma", "traditional healing", "divination", "ritual"],
+    "connections": []
+  },
+  {
+    "id": "african-diaspora-religions",
+    "title": "African Diaspora Religions in the Americas",
+    "description": "Enslaved Africans preserve and adapt their spiritual traditions in the Americas, creating syncretic religions like Vodou (Haiti), Candomblé (Brazil), and Santería (Cuba). These traditions maintain African cosmology, Orisha worship, and ritual practices while adapting to new contexts.",
+    "startYear": 1500,
+    "endYear": 2025,
+    "region": {
+      "id": "caribbean",
+      "name": "Caribbean",
+      "continent": "North America"
+    },
+    "location": {
+      "lat": 18.5944,
+      "lng": -72.3074,
+      "name": "Port-au-Prince, Haiti"
+    },
+    "religion": {
+      "id": "vodou",
+      "name": "Haitian Vodou",
+      "tradition": "African Diaspora",
+      "color": "#800080"
+    },
+    "category": "syncretism",
+    "significance": "Preservation and transformation of African spiritual traditions through slavery and colonialism",
+    "keywords": ["Orisha", "syncretism", "resistance", "lwa", "sacred drums", "possession"],
+    "connections": ["yoruba-religion", "christianity-origins"]
   }
 ]

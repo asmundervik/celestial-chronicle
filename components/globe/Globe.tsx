@@ -7,9 +7,12 @@ import { Suspense, useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Earth from './Earth';
 import EventPopup from '@/components/events/EventPopup';
+import BuddhaEnlightenmentScene from '@/components/events/animations/BuddhaEnlightenmentScene';
+import VideoOverlay from '@/components/events/animations/VideoOverlay';
 import { useAppStore } from '@/stores/useAppStore';
 import { ReligiousEvent } from '@/types';
 import sampleEvents from '@/data/sample-events.json';
+import { AnimatePresence } from 'framer-motion';
 
 // Helper to convert lat/lng to 3D position on sphere
 function latLngToVector3(lat: number, lng: number, radius: number = 1): THREE.Vector3 {
@@ -76,6 +79,34 @@ function CameraController({
       };
 
       animate();
+    } else if (!targetEvent && controlsRef.current) {
+      // When event is deselected, reset controls target to center of globe
+      const centerPosition = new THREE.Vector3(0, 0, 0);
+      const startTarget = controlsRef.current.target.clone();
+      const startTime = Date.now();
+      const duration = 1000; // 1 second
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease in-out function
+        const eased = progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
+
+        // Reset target to center
+        if (controlsRef.current) {
+          controlsRef.current.target.lerpVectors(startTarget, centerPosition, eased);
+          controlsRef.current.update();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
     }
   }, [targetEvent, camera]);
 
@@ -96,6 +127,8 @@ function CameraController({
 
 const Globe = () => {
   const [autoRotate, setAutoRotate] = useState(true);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [animatingEvent, setAnimatingEvent] = useState<ReligiousEvent | null>(null);
   const { setEvents, getFilteredEvents, selectedEvent, setSelectedEvent } = useAppStore();
 
   // Load events on mount
@@ -114,7 +147,22 @@ const Globe = () => {
   };
 
   const handleEventClick = (event: ReligiousEvent) => {
-    setSelectedEvent(event);
+    // Check if this event has a video animation or special animation
+    if (event.animationVideo || event.id === 'buddha-enlightenment') {
+      setAnimatingEvent(event);
+      setShowAnimation(true);
+      // Animation will call handleAnimationComplete when done
+    } else {
+      setSelectedEvent(event);
+    }
+  };
+
+  const handleAnimationComplete = () => {
+    setShowAnimation(false);
+    if (animatingEvent) {
+      setSelectedEvent(animatingEvent);
+      setAnimatingEvent(null);
+    }
   };
 
   const handleClosePopup = () => {
@@ -176,6 +224,27 @@ const Globe = () => {
 
       {/* Event Popup */}
       <EventPopup event={selectedEvent} onClose={handleClosePopup} />
+
+      {/* Animated Scene Overlay */}
+      <AnimatePresence>
+        {showAnimation && animatingEvent && (
+          <>
+            {/* Video animation if available */}
+            {animatingEvent.animationVideo && (
+              <VideoOverlay
+                videoSrc={animatingEvent.animationVideo}
+                onComplete={handleAnimationComplete}
+                duration={3000}
+              />
+            )}
+
+            {/* Fallback to custom animation for specific events */}
+            {!animatingEvent.animationVideo && animatingEvent.id === 'buddha-enlightenment' && (
+              <BuddhaEnlightenmentScene onComplete={handleAnimationComplete} />
+            )}
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };

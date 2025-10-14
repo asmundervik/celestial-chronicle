@@ -8,7 +8,11 @@
       "Bash(npx shadcn@latest init:*)",
       "Bash(mkdir:*)",
       "Bash(npm run dev:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd guided journey feature with camera animation and mobile timeline optimization\n\nFeatures:\n- Guided Journeys: 6 curated thematic routes (Asian Awakening, Indigenous Americas, Norse Saga, Abrahamic Path, Mystical Pathways, Ancient Origins)\n- Journey navigation with Previous/Next buttons and progress tracking in event popups\n- Smooth camera animation that flies to each event location on the globe\n- Mobile-optimized collapsible timeline with expand/minimize functionality\n- Updated header to \"Celestial Chronicle\" with responsive sizing\n- Journey selector integrated into timeline component for both desktop and mobile\n- State management via Zustand for journey progress and navigation\n\nTechnical changes:\n- Created data/journeys.json with 6 themed journey configurations\n- Added Journey and JourneyState types to types/index.ts\n- Extended Zustand store with journey state management (startJourney, endJourney, nextStep, previousStep)\n- Implemented CameraController component with smooth lat/lng to 3D position animation\n- Synced Globe component selectedEvent state with global store\n- Enhanced EventPopup with journey navigation controls and progress bar\n- Made Timeline component mobile-responsive with collapsible sections\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(where:*)"
     ],
     "deny": [],
     "ask": []
