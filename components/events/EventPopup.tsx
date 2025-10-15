@@ -4,10 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ReligiousEvent } from '@/types';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
+import { useState, useEffect } from 'react';
 import MayanAnimation from './animations/MayanAnimation';
 import AztecAnimation from './animations/AztecAnimation';
 import OlmecAnimation from './animations/OlmecAnimation';
 import NorseAnimation from './animations/NorseAnimation';
+import BuddhismAnimation from './animations/BuddhismAnimation';
+import HinduismAnimation from './animations/HinduismAnimation';
+import ChristianityAnimation from './animations/ChristianityAnimation';
+import IslamAnimation from './animations/IslamAnimation';
+import TaoismAnimation from './animations/TaoismAnimation';
+import ZoroastrianismAnimation from './animations/ZoroastrianismAnimation';
+import AboriginalAnimation from './animations/AboriginalAnimation';
+import ConfucianismAnimation from './animations/ConfucianismAnimation';
 
 interface EventPopupProps {
   event: ReligiousEvent | null;
@@ -22,6 +31,25 @@ const EventPopup = ({ event, onClose }: EventPopupProps) => {
     previousStep,
     endJourney
   } = useAppStore();
+
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Detect when step changes and temporarily hide popup
+  useEffect(() => {
+    if (activeJourney) {
+      setIsVisible(false);
+
+      // Show popup again after camera animation (zoom out + move + zoom in = ~4 seconds)
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    } else {
+      // Not in journey, show immediately
+      setIsVisible(true);
+    }
+  }, [currentStepIndex, activeJourney]);
 
   if (!event) return null;
 
@@ -47,6 +75,25 @@ const EventPopup = ({ event, onClose }: EventPopupProps) => {
         return <OlmecAnimation />;
       case 'norse-paganism':
         return <NorseAnimation />;
+      case 'buddhism':
+        return <BuddhismAnimation />;
+      case 'hinduism':
+        return <HinduismAnimation />;
+      case 'christianity':
+      case 'coptic-christianity':
+      case 'ethiopian-orthodox':
+        return <ChristianityAnimation />;
+      case 'islam':
+        return <IslamAnimation />;
+      case 'taoism':
+        return <TaoismAnimation />;
+      case 'zoroastrianism':
+        return <ZoroastrianismAnimation />;
+      case 'aboriginal-spirituality':
+      case 'torres-strait-spirituality':
+        return <AboriginalAnimation />;
+      case 'confucianism':
+        return <ConfucianismAnimation />;
       default:
         return (
           <div className="w-full h-full flex items-center justify-center bg-slate-900/30 rounded-lg border-2 border-dashed border-slate-700/50">
@@ -60,13 +107,14 @@ const EventPopup = ({ event, onClose }: EventPopupProps) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ type: 'spring', duration: 0.5 }}
-        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4"
-      >
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          transition={{ type: 'spring', duration: 0.5 }}
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4"
+        >
         <div className="bg-slate-800/95 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-2xl overflow-hidden">
           {/* Header with color accent */}
           <div
@@ -196,6 +244,7 @@ const EventPopup = ({ event, onClose }: EventPopupProps) => {
           </div>
         </div>
       </motion.div>
+      )}
     </AnimatePresence>
   );
 };

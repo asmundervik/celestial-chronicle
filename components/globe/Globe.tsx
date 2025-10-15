@@ -47,29 +47,67 @@ function CameraController({
         1
       );
 
-      // Calculate camera target position (looking at the event from a distance)
-      const distance = 3; // Distance from globe
-      const cameraPosition = eventPosition.clone().multiplyScalar(distance);
-
-      // Smoothly animate camera to new position
+      // Calculate camera target position (looking at the event from a closer distance)
+      const closeDistance = 2.2; // Closer zoom for better focus
+      const farDistance = 5; // Zoom out distance for transition
+      const finalPosition = eventPosition.clone().multiplyScalar(closeDistance);
       const startPosition = camera.position.clone();
+
+      // Calculate intermediate zoom-out position (away from globe center)
+      const currentDirection = startPosition.clone().normalize();
+      const zoomOutPosition = currentDirection.multiplyScalar(farDistance);
+
       const startTime = Date.now();
-      const duration = 1500; // 1.5 seconds
+      const phase1Duration = 800; // Zoom out: 0.8 seconds
+      const phase2Duration = 1500; // Move: 1.5 seconds
+      const phase3Duration = 1200; // Zoom in: 1.2 seconds
+      const totalDuration = phase1Duration + phase2Duration + phase3Duration;
 
       const animate = () => {
         const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
+        const progress = Math.min(elapsed / totalDuration, 1);
 
-        // Ease in-out function
-        const eased = progress < 0.5
-          ? 2 * progress * progress
-          : -1 + (4 - 2 * progress) * progress;
+        let currentPosition;
+        let targetLookAt;
 
-        camera.position.lerpVectors(startPosition, cameraPosition, eased);
+        if (elapsed < phase1Duration) {
+          // Phase 1: Zoom out
+          const phase1Progress = elapsed / phase1Duration;
+          const eased = phase1Progress < 0.5
+            ? 2 * phase1Progress * phase1Progress
+            : -1 + (4 - 2 * phase1Progress) * phase1Progress;
 
-        // Update controls target to point at the event
-        if (controlsRef.current) {
-          controlsRef.current.target.lerp(eventPosition, eased);
+          currentPosition = new THREE.Vector3().lerpVectors(startPosition, zoomOutPosition, eased);
+          targetLookAt = new THREE.Vector3(0, 0, 0); // Look at globe center
+        } else if (elapsed < phase1Duration + phase2Duration) {
+          // Phase 2: Move to new location (staying zoomed out)
+          const phase2Progress = (elapsed - phase1Duration) / phase2Duration;
+          const eased = phase2Progress < 0.5
+            ? 2 * phase2Progress * phase2Progress
+            : -1 + (4 - 2 * phase2Progress) * phase2Progress;
+
+          const targetDirection = eventPosition.clone().normalize();
+          const targetZoomedOut = targetDirection.multiplyScalar(farDistance);
+          currentPosition = new THREE.Vector3().lerpVectors(zoomOutPosition, targetZoomedOut, eased);
+          targetLookAt = new THREE.Vector3().lerpVectors(new THREE.Vector3(0, 0, 0), eventPosition, eased);
+        } else {
+          // Phase 3: Zoom in to final position
+          const phase3Progress = (elapsed - phase1Duration - phase2Duration) / phase3Duration;
+          const eased = phase3Progress < 0.5
+            ? 2 * phase3Progress * phase3Progress
+            : -1 + (4 - 2 * phase3Progress) * phase3Progress;
+
+          const targetDirection = eventPosition.clone().normalize();
+          const targetZoomedOut = targetDirection.multiplyScalar(farDistance);
+          currentPosition = new THREE.Vector3().lerpVectors(targetZoomedOut, finalPosition, eased);
+          targetLookAt = eventPosition;
+        }
+
+        camera.position.copy(currentPosition);
+
+        // Update controls target
+        if (controlsRef.current && targetLookAt) {
+          controlsRef.current.target.copy(targetLookAt);
           controlsRef.current.update();
         }
 
@@ -129,12 +167,29 @@ const Globe = () => {
   const [autoRotate, setAutoRotate] = useState(true);
   const [showAnimation, setShowAnimation] = useState(false);
   const [animatingEvent, setAnimatingEvent] = useState<ReligiousEvent | null>(null);
-  const { setEvents, getFilteredEvents, selectedEvent, setSelectedEvent } = useAppStore();
+  const [showJourneyIntro, setShowJourneyIntro] = useState(false);
+  const [journeyIntroVideo, setJourneyIntroVideo] = useState<string | null>(null);
+  const { setEvents, getFilteredEvents, selectedEvent, setSelectedEvent, activeJourney } = useAppStore();
 
   // Load events on mount
   useEffect(() => {
     setEvents(sampleEvents as ReligiousEvent[]);
   }, [setEvents]);
+
+  // Disable auto-rotation when a journey is active
+  useEffect(() => {
+    if (activeJourney) {
+      setAutoRotate(false);
+    }
+  }, [activeJourney]);
+
+  // Play journey intro video when journey starts
+  useEffect(() => {
+    if (activeJourney && activeJourney.introVideo) {
+      setJourneyIntroVideo(activeJourney.introVideo);
+      setShowJourneyIntro(true);
+    }
+  }, [activeJourney]);
 
   // Get filtered events based on timeline
   const filteredEvents = getFilteredEvents();
@@ -163,6 +218,11 @@ const Globe = () => {
       setSelectedEvent(animatingEvent);
       setAnimatingEvent(null);
     }
+  };
+
+  const handleJourneyIntroComplete = () => {
+    setShowJourneyIntro(false);
+    setJourneyIntroVideo(null);
   };
 
   const handleClosePopup = () => {
@@ -227,6 +287,16 @@ const Globe = () => {
 
       {/* Animated Scene Overlay */}
       <AnimatePresence>
+        {/* Journey Intro Video */}
+        {showJourneyIntro && journeyIntroVideo && (
+          <VideoOverlay
+            videoSrc={journeyIntroVideo}
+            onComplete={handleJourneyIntroComplete}
+            duration={10000}
+          />
+        )}
+
+        {/* Event Animation */}
         {showAnimation && animatingEvent && (
           <>
             {/* Video animation if available */}

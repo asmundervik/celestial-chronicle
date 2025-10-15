@@ -47,14 +47,17 @@ const VideoOverlay = ({ videoSrc, onComplete, duration = 3000 }: VideoOverlayPro
       transition={{ duration: 0.3 }}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
     >
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        className="w-full h-full object-cover"
-        muted
-        playsInline
-        preload="auto"
-      />
+      {/* Container with max dimensions for desktop */}
+      <div className="relative w-full h-full max-w-[1920px] max-h-[1080px] flex items-center justify-center">
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          className="w-full h-full object-contain"
+          muted
+          playsInline
+          preload="auto"
+        />
+      </div>
 
       {/* Optional: Skip button */}
       <motion.button

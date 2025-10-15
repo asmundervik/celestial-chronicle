@@ -72,6 +72,7 @@ export interface Journey {
   description: string;
   icon: string;
   color: string;
+  introVideo?: string; // Optional path to intro video for the journey
   eventIds: string[];
 }
 

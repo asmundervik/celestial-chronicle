@@ -345,8 +345,7 @@
     "category": "origin",
     "significance": "Birth of Buddhism and the Four Noble Truths",
     "keywords": ["meditation", "enlightenment", "middle way", "suffering", "mindfulness"],
-    "connections": ["upanishads", "buddhism-spread-china", "zen-buddhism", "tibetan-buddhism"],
-    "animationVideo": "/videos/animations/buddhist-monk.mp4"
+    "connections": ["upanishads", "buddhism-spread-china", "zen-buddhism", "tibetan-buddhism"]
   },
   {
     "id": "tao-te-ching",

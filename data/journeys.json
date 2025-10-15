@@ -5,6 +5,7 @@
     "description": "Follow the spiritual traditions that emerged across Asia, from ancient Vedic hymns to the spread of Buddhism and the wisdom of Taoism and Confucianism.",
     "icon": "🌏",
     "color": "#FF6B35",
+    "introVideo": "/videos/animations/asian-awakening.mp4",
     "eventIds": [
       "vedas-composition",
       "upanishads",
@@ -23,6 +24,7 @@
     "description": "Discover the rich spiritual traditions of the Americas, from ancient Olmec shamanism to the magnificent pyramids of the Maya and Aztec.",
     "icon": "🌎",
     "color": "#DAA520",
+    "introVideo": "/videos/animations/indigenous-america.mp4",
     "eventIds": [
       "olmec-civilization",
       "mayan-temples",
@@ -36,6 +38,7 @@
     "description": "Journey through the Viking world, from Bronze Age sun worship to the mighty gods of Asgard, the Viking expansion, and the final Christianization of the North.",
     "icon": "⚔️",
     "color": "#4169E1",
+    "introVideo": "/videos/animations/the-norse-saga.mp4",
     "eventIds": [
       "norse-mythology-bronze-age",
       "norse-pantheon",
@@ -50,6 +53,7 @@
     "description": "Trace the interconnected story of Judaism, Christianity, and Islam, from ancient Zoroastrian monotheism to the revelation of the Quran.",
     "icon": "✡️",
     "color": "#1E90FF",
+    "introVideo": "/videos/animations/the-abraham-path.mp4",
     "eventIds": [
       "zoroastrianism-founding",
       "judaism-temple",
@@ -68,6 +72,7 @@
     "description": "Explore the inner dimensions of spirituality through meditation, mysticism, and esoteric practices across different traditions.",
     "icon": "🕉️",
     "color": "#9370DB",
+    "introVideo": "/videos/animations/mystical-traditions.mp4",
     "eventIds": [
       "upanishads",
       "buddha-enlightenment",
@@ -84,6 +89,7 @@
     "description": "Begin at the dawn of human spirituality, from 50,000-year-old Aboriginal Dreamtime to the foundations of world religions.",
     "icon": "🌅",
     "color": "#8B4513",
+    "introVideo": "/videos/animations/ancient-origins.mp4",
     "eventIds": [
       "dreamtime-traditions",
       "norse-mythology-bronze-age",
