@@ -1,77 +1,92 @@
 # CelestialChronicle
 
+[![MIT License](https://img.shields.io/github/license/asmundervik/celestial-chronicle)](https://github.com/asmundervik/celestial-chronicle/blob/main/LICENSE)
+[![Deployed to Cloudflare Pages](https://img.shields.io/badge/deployed_to-Cloudflare_Pages-blue?logo=cloudflare)](https://www.celestialchronicle.org)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+
 An immersive, visually stunning web application that takes users on an interactive journey through religious history across time and space.
 
-## Overview
+## 🌏 Overview
 
 CelestialChronicle explores the magnificent aspects of religious history from the earliest times to today, focusing on:
 
-- **Eastern religions** (Hinduism, Buddhism, Taoism, etc.)
-- **Native American spiritual traditions**
-- **Aboriginal Australian traditions**
-- And more to come...
+- **Eastern Religions** (Hinduism, Buddhism, Taoism, Confucianism)
+- **Indigenous Americas** (Olmec, Mayan, Aztec traditions)
+- **Norse Mythology** (Viking Age, Sagas, Christianization)
+- **Abrahamic Faiths** (Zoroastrianism, Judaism, Christianity, Islam)
+- **Ancient Origins** (Aboriginal Dreamtime traditions)
 
-## Features
+## ✨ Features
 
-- **Interactive 3D Globe** - Rotate and explore religious events by geographic region
-- **Timeline Navigation** - Traverse thousands of years of religious history
-- **Rich Animations** - Beautiful transitions and visual storytelling
-- **Red Threads** - Discover connections between religions across time and space
-- **Detailed Event Views** - Immersive content with texts and animations
+- **Interactive 3D Globe** - Rotate and explore religious events by geographic region.
+- **Timeline Navigation** - Traverse thousands of years of religious history.
+- **Rich Animations** - Custom visual storytelling for each major tradition.
+- **Red Threads** - Discover connections between religions across time and space.
+- **Immersive Details** - High-quality video overlays and procedural animations.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: Shadcn/ui
-- **3D Graphics**: React Three Fiber + Three.js
-- **Animations**: Framer Motion + GSAP
-- **State Management**: Zustand
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **3D Graphics**: [React Three Fiber](https://r3f.docs.pmnd.rs/) + [Three.js](https://threejs.org/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) + [GSAP](https://gsap.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
 
-## Getting Started
+## 🚀 Getting Started
 
-Install dependencies:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/asmundervik/celestial-chronicle.git
+   ```
 
-```bash
-npm install
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Run the development server:
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-```
+4. **Open [http://localhost:3000](http://localhost:3000)** to view the app locally.
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
-
-## Project Structure
+## 📂 Project Structure
 
 ```
 celestial-chronicle/
-├── app/              # Next.js app directory
+├── app/              # Next.js app router & pages
 ├── components/       # React components
-│   ├── globe/       # 3D globe components
-│   ├── timeline/    # Timeline components
-│   ├── events/      # Event detail components
-│   └── ui/          # Shadcn UI components
-├── stores/          # Zustand state management
-├── data/            # Religious events data (JSON)
-├── types/           # TypeScript type definitions
-├── hooks/           # Custom React hooks
-└── lib/             # Utility functions
+│   ├── events/       # Event detail animations & popups
+│   ├── globe/        # 3D globe & marker logic
+│   └── timeline/     # Navigation timeline
+├── data/             # Historical datasets (JSON)
+├── lib/              # Shared utilities
+├── public/           # Static assets & videos
+├── scripts/          # Optimization & helper scripts
+├── stores/           # Zustand state management
+└── types/            # TypeScript interfaces
 ```
 
-## Development
+## 🌐 Deployment
 
-The app is designed to be:
-- Logically simple
-- Visually stunning
-- Highly interactive
-- Educational yet inspirational
+The project is live at **[www.celestialchronicle.org](https://www.celestialchronicle.org)** and is hosted on **Cloudflare Pages**.
 
-Focus on creating beautiful, smooth animations and an immersive user experience.
+### Continuous Deployment
+Every push to the `main` branch is automatically built and deployed via the Cloudflare Pages CI/CD pipeline.
 
-## License
+### Build Configuration
+- **Framework Preset**: Next.js
+- **Build Command**: `npm run build`
+- **Output Directory**: `.next`
+- **Environment**: Node.js 18+
 
-MIT
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests to help expand the historical coverage or improve the visual experience.
