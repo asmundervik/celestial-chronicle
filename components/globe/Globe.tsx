@@ -37,30 +37,37 @@ function CameraController({
   const { camera } = useThree();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const controlsRef = useRef<any>(null);
+  const animFrameRef = useRef<number | null>(null);
+
+  const cancelAnimation = () => {
+    if (animFrameRef.current !== null) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
+  };
 
   useEffect(() => {
+    cancelAnimation();
+
     if (targetEvent && controlsRef.current) {
-      // Get the position of the event on the globe
       const eventPosition = latLngToVector3(
         targetEvent.location.lat,
         targetEvent.location.lng,
         1
       );
 
-      // Calculate camera target position (looking at the event from a closer distance)
-      const closeDistance = 2.2; // Closer zoom for better focus
-      const farDistance = 5; // Zoom out distance for transition
+      const closeDistance = 2.2;
+      const farDistance = 5;
       const finalPosition = eventPosition.clone().multiplyScalar(closeDistance);
       const startPosition = camera.position.clone();
 
-      // Calculate intermediate zoom-out position (away from globe center)
       const currentDirection = startPosition.clone().normalize();
       const zoomOutPosition = currentDirection.multiplyScalar(farDistance);
 
       const startTime = Date.now();
-      const phase1Duration = 800; // Zoom out: 0.8 seconds
-      const phase2Duration = 1500; // Move: 1.5 seconds
-      const phase3Duration = 1200; // Zoom in: 1.2 seconds
+      const phase1Duration = 800;
+      const phase2Duration = 1500;
+      const phase3Duration = 1200;
       const totalDuration = phase1Duration + phase2Duration + phase3Duration;
 
       const animate = () => {
@@ -71,16 +78,14 @@ function CameraController({
         let targetLookAt;
 
         if (elapsed < phase1Duration) {
-          // Phase 1: Zoom out
           const phase1Progress = elapsed / phase1Duration;
           const eased = phase1Progress < 0.5
             ? 2 * phase1Progress * phase1Progress
             : -1 + (4 - 2 * phase1Progress) * phase1Progress;
 
           currentPosition = new THREE.Vector3().lerpVectors(startPosition, zoomOutPosition, eased);
-          targetLookAt = new THREE.Vector3(0, 0, 0); // Look at globe center
+          targetLookAt = new THREE.Vector3(0, 0, 0);
         } else if (elapsed < phase1Duration + phase2Duration) {
-          // Phase 2: Move to new location (staying zoomed out)
           const phase2Progress = (elapsed - phase1Duration) / phase2Duration;
           const eased = phase2Progress < 0.5
             ? 2 * phase2Progress * phase2Progress
@@ -91,7 +96,6 @@ function CameraController({
           currentPosition = new THREE.Vector3().lerpVectors(zoomOutPosition, targetZoomedOut, eased);
           targetLookAt = new THREE.Vector3().lerpVectors(new THREE.Vector3(0, 0, 0), eventPosition, eased);
         } else {
-          // Phase 3: Zoom in to final position
           const phase3Progress = (elapsed - phase1Duration - phase2Duration) / phase3Duration;
           const eased = phase3Progress < 0.5
             ? 2 * phase3Progress * phase3Progress
@@ -105,47 +109,55 @@ function CameraController({
 
         camera.position.copy(currentPosition);
 
-        // Update controls target
         if (controlsRef.current && targetLookAt) {
           controlsRef.current.target.copy(targetLookAt);
           controlsRef.current.update();
         }
 
         if (progress < 1) {
-          requestAnimationFrame(animate);
+          animFrameRef.current = requestAnimationFrame(animate);
+        } else {
+          animFrameRef.current = null;
         }
       };
 
-      animate();
+      animFrameRef.current = requestAnimationFrame(animate);
     } else if (!targetEvent && controlsRef.current) {
-      // When event is deselected, reset controls target to center of globe
-      const centerPosition = new THREE.Vector3(0, 0, 0);
+      // Reset both the orbit target and the camera distance so OrbitControls
+      // resumes at a comfortable radius instead of the zoomed-in position.
+      const centerTarget = new THREE.Vector3(0, 0, 0);
       const startTarget = controlsRef.current.target.clone();
+      const startCamPos = camera.position.clone();
+      // Pull the camera back out to the default orbit radius along its current direction
+      const resetCamPos = camera.position.clone().normalize().multiplyScalar(3);
       const startTime = Date.now();
-      const duration = 1000; // 1 second
+      const duration = 1000;
 
       const animate = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // Ease in-out function
         const eased = progress < 0.5
           ? 2 * progress * progress
           : -1 + (4 - 2 * progress) * progress;
 
-        // Reset target to center
         if (controlsRef.current) {
-          controlsRef.current.target.lerpVectors(startTarget, centerPosition, eased);
+          controlsRef.current.target.lerpVectors(startTarget, centerTarget, eased);
           controlsRef.current.update();
         }
+        camera.position.lerpVectors(startCamPos, resetCamPos, eased);
 
         if (progress < 1) {
-          requestAnimationFrame(animate);
+          animFrameRef.current = requestAnimationFrame(animate);
+        } else {
+          animFrameRef.current = null;
         }
       };
 
-      animate();
+      animFrameRef.current = requestAnimationFrame(animate);
     }
+
+    return cancelAnimation;
   }, [targetEvent, camera]);
 
   return (
