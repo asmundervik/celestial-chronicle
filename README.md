@@ -1,7 +1,7 @@
 # CelestialChronicle
 
-[![MIT License](https://img.shields.io/github/license/asmundervik/celestial-chronicle)](https://github.com/asmundervik/celestial-chronicle/blob/main/LICENSE)
-[![Deployed to Cloudflare Pages](https://img.shields.io/badge/deployed_to-Cloudflare_Pages-blue?logo=cloudflare)](https://www.celestialchronicle.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Deployed to Vercel](https://img.shields.io/badge/deployed_to-Vercel-black?logo=vercel)](https://www.celestialchronicle.org)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
 
@@ -72,10 +72,10 @@ celestial-chronicle/
 
 ## 🌐 Deployment
 
-The project is live at **[www.celestialchronicle.org](https://www.celestialchronicle.org)** and is hosted on **Cloudflare Pages**.
+The project is live at **[www.celestialchronicle.org](https://www.celestialchronicle.org)** and is hosted on **Vercel**.
 
 ### Continuous Deployment
-Every push to the `main` branch is automatically built and deployed via the Cloudflare Pages CI/CD pipeline.
+Every push to the `main` branch is automatically built and deployed via the Vercel CI/CD pipeline.
 
 ### Build Configuration
 - **Framework Preset**: Next.js
